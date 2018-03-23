@@ -1,0 +1,39 @@
+@import "variables";
+
+*{
+    padding: 0;
+    margin: 0;
+}
+#head{
+    width: 100vw;
+    height: 7vh;
+    background: $prim-bg;
+}
+#body{
+    background: $prim-bg;
+    width: 10000vw;
+    display: flex;
+    flex-wrap: nowrap;
+    #bcont{
+        
+        height: 86vh;
+    }
+}
+
+#foot{
+    width: 100vw;
+    height: 7vh;
+    background: $prim-bg;
+    
+} 
+.evnt::before{
+    content: '---'
+}
+
+.evnt{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 1;
+
+}
