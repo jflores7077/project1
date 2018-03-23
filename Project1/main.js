@@ -3,7 +3,7 @@
 - You must display a stand-alone Google Map (within a container) using location information.
 - Extra credit for teams that use features such as Bootstrap (a framework for responsive web design)
 */
-
+ 
 function renderMap() {
     var latlng = new google.maps.LatLng(39.305, -76.617);
     var mapProp= {
@@ -13,7 +13,7 @@ function renderMap() {
     var map=new google.maps.Map(document.getElementById("body"),mapProp);
 }
 function getData(){
-    $.getJSON( 'https://data.cityofnewyork.us/resource/vvv6-q4xc.json', function( data ) {
+    $.getJSON( 'https://data.cityofnewyork.us/resource/byk8-bdfw.json', function( data ) {
         buildData(data)
     });
 }

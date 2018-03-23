@@ -2,23 +2,32 @@
   padding: 0;
   margin: 0; }
 
+@keyframes openHead {
+  0% {
+    height: 0vh; }
+  100% {
+    height: 7vh; } }
 #head {
   width: 100vw;
-  height: 7vh;
-  background: rgba(90, 152, 224, 0); }
+  height: 0vh;
+  background: #0a0c18;
+  animation: openHead 2s;
+  animation-fill-mode: forwards; }
 
 #body {
-  background: rgba(90, 152, 224, 0);
+  background: #0a0c18;
   width: 10000vw;
   display: flex;
   flex-wrap: nowrap; }
   #body #bcont {
     height: 86vh; }
+  #body * {
+    color: #fff; }
 
 #foot {
   width: 100vw;
   height: 7vh;
-  background: rgba(90, 152, 224, 0); }
+  background: #0a0c18; }
 
 .evnt::before {
   content: "---"; }
