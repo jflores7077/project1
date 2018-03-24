@@ -1,2 +1,50 @@
-$prim-bg: rgba(10, 12, 24,1);
-$txt-col: #fff; 
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+$bg-colors: rgb(6, 1, 6), rgb(255, 232, 232), rgb(20,30,10);
+$txt-col: #fff, #000;  
+
+$overlay-bg: rgba(25,25,55,1);
+
+$font: 'Ubuntu', sans-serif;
+@keyframes flashRed{
+    0%{
+        background:transparent;
+    }
+    5%{
+        background: rgba(219, 57, 8, 0.856);
+    }
+    100%{
+        background:transparent;
+    }
+}
+
+@keyframes flashBorder{
+    0%{
+        border-bottom: 2px solid transparent;
+        caret-color: nth($bg-colors,1);
+    }
+
+    5%{
+        border-bottom: 2.5px solid rgba(245,225,235,1);
+    }
+
+    10%{
+        border-bottom: 2px solid rgba(245,225,235,0.8);
+    }
+
+    100%{
+        border-bottom: 2px solid rgba(245,225,235,0.8);
+        caret-color: rgba(255,225,245,0.8);
+    }
+}
+
+@keyframes unflashBorder{
+    0%{
+        border-bottom: 2px solid rgba(245,225,235,0.8);
+        caret-color: rgba(255,225,245,0.8);
+    }
+    100%{
+        border-bottom: 0px solid transparent;
+        caret-color: nth($bg-colors,1);
+    }
+}

@@ -1,43 +1,181 @@
 @import "variables";
  
-*{
+body:not(.mapCont){
     padding: 0;
     margin: 0;
+    font-family: $font;
+
+    overflow: hidden;
+} 
+*:focus {
+    outline: none;
 }
-@keyframes openHead{
-    0%{
-        height: 0vh;
-    }
-    100%{
-        height:7vh
-    }
+
+.sSpan{
+    font-weight: bold;
 }
 #head{
+    background:nth( $bg-colors, 1);
     width: 100vw;
-    height: 0vh;
-    background: $prim-bg;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    *{
+        animation-fill-mode: forwards;
+        transition: 1s;
+        text-align: center;
+        justify-content: center;
+    }
+    p, h1, h2, h3, h4, h5, h6, input{
+        color: nth($txt-col,1);
+    }
+    #headCont{
+        border: 3px solid rgba(255,255,255,0.4);
+        *{
+            padding: 0;
+            margin: 0;
+            font-family: $font;
 
-    animation: openHead 2s;
-    animation-fill-mode: forwards;
+            overflow: hidden;
+        }
+    }
+
+    #title{
+        font-size: 2em;
+        p{
+            padding: 8vh 13vw ( 8vh - 2.5vh ) 13vw;
+        }
+
+    }
+    #search{
+        
+        padding: 2.5vh 0vw 2.5vh 0vw;
+        display: flex;
+        justify-content: center;
+
+        input{
+            background: rgba(255,255,255,0.0);
+            border: none;
+            transition: 0.1s;
+            text-align: center;
+
+            caret-color: nth($bg-colors,1);
+
+            transition: 0.1s;
+        }
+        
+
+        #btn{
+            padding: 0px 1em;
+            margin: 0px 1vw;
+            transition: 0.2s;
+            
+        }
+
+    }
+
+}
+
+.addAnim{
+    animation: flashBorder 1s;
+
+}
+.removeAnim{
+    animation: unflashBorder 2s;
+}
+
+.noValue{
+    animation: flashRed 1s;
+}
+
+#map{
+    position: absolute;
+    left: 100vw;
+    width: 100vw;
+    height: 45vh;
+    background: darken(nth( $bg-colors, 2),5%);
 }
 #body{
-    background: $prim-bg;
-    width: 10000vw;
-    display: flex;
-    flex-wrap: nowrap;
-    #bcont{
-        
-        height: 86vh;
-    }
+    
+    background:nth( $bg-colors, 2);
     *{
-        color: $txt-col;
+        color: nth($txt-col,2);
+        padding: 0;
+        margin: 0;
+        font-family: $font;
+
+        overflow: hidden;
     }
+    #dataInfo{
+        background: darken(nth( $bg-colors, 2),3%);
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        text-align: center;
+        height: 5.5vh;
+        #info_search{
+            display: flex;
+            align-self: center;
+            justify-content: flex-start;
+            
+            p{
+                padding: 0px 10px;
+                text-decoration: underline;
+                font-size: 1em;
+            }
+            
+        }
+
+        #info_search:hover{
+            p{
+                font-size: 1.05em;
+            }
+        }
+
+        #info_info{
+            display: flex;
+            align-self: center;
+            justify-content: flex-end;
+        }
+        
+    }
+
+    #dataReturn{
+        display: flex;
+        width: 10000000vw;
+        height: 100vh;
+        
+        .panel{
+            display: flex;
+            width: 30vw;
+            height: 100vh - 45vh;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            text-align: center;
+            align-items: center;
+
+            #p_location{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+            }
+            
+        }
+    }
+
+    
+}
+
+.p_mapLink{
+    background: red;
 }
 
 #foot{
-    width: 100vw;
-    height: 7vh;
-    background: $prim-bg;
+    background:nth( $bg-colors, 3);
     
 } 
 .evnt::before{
