@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+@keyframes flashRed {
+  0% {
+    background: transparent; }
+  5% {
+    background: rgba(219, 57, 8, 0.856); }
+  100% {
+    background: transparent; } }
+@keyframes flashBorder {
+  0% {
+    border-bottom: 2px solid transparent;
+    caret-color: rgba(196, 27, 27, 0.5); }
+  5% {
+    border-bottom: 2px solid rgba(196, 27, 27, 0.5); }
+  10% {
+    border-bottom: 2px solid rgba(218, 30, 30, 0.5); }
+  100% {
+    border-bottom: 2px solid rgba(196, 27, 27, 0.5);
+    caret-color: rgba(205, 28, 28, 0.5); } }
+@keyframes unflashBorder {
+  0% {
+    caret-color: rgba(196, 27, 27, 0.5);
+    border-bottom: 2px solid rgba(196, 27, 27, 0.5); }
+  100% {
+    border-bottom: 0px solid transparent;
+    caret-color: rgba(205, 28, 28, 0.5); } }
+body:not(.mapCont) {
+  padding: 0;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+  overflow: hidden; }
+
+*:focus {
+  outline: none; }
+
+.sSpan {
+  font-weight: bold; }
+
+#head {
+  background: #e5e9eb;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  flex-direction: column; }
+  #head * {
+    animation-fill-mode: forwards;
+    transition: 1s;
+    text-align: center;
+    justify-content: center;
+    text-align: center; }
+  #head p, #head h1, #head h2, #head h3, #head h4, #head h5, #head h6, #head input {
+    color: #8b5454; }
+  #head #h_title {
+    border: 3px solid rgba(196, 27, 27, 0.5);
+    background: #e8ebed;
+    margin: 5vh 2vw; }
+    #head #h_title h1 {
+      padding: 3vh 5vw; }
+  #head #Madeby {
+    padding-top: 5vw; }
+    #head #Madeby p {
+      text-align: center;
+      padding: 5px 25px;
+      color: rgba(225, 255, 225, 0.4);
+      background: rgba(255, 255, 255, 0.1); }
+  #head #headCont * {
+    padding: 0;
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    overflow: hidden; }
+  #head #title {
+    font-size: 1.5em; }
+    #head #title h5 {
+      padding: 3vh 13vw; }
+  #head #search {
+    padding: 2.5vh 0vw 2.5vh 0vw;
+    display: flex;
+    justify-content: center; }
+    #head #search * {
+      font-size: 1.1em; }
+    #head #search input {
+      background: rgba(255, 255, 255, 0);
+      border: none;
+      transition: 0.1s;
+      text-align: center;
+      caret-color: rgba(205, 28, 28, 0.5);
+      transition: 0.1s; }
+    #head #search #btn {
+      padding: 0px 1em;
+      margin: 0px 1vw;
+      transition: 0.2s; }
+
+.addAnim {
+  animation: flashBorder 1s; }
+
+.removeAnim {
+  animation: unflashBorder 2s; }
+
+.noValue {
+  animation: flashRed 1s; }
+
+#map {
+  position: absolute;
+  left: 100vw;
+  width: 100vw;
+  height: 45vh;
+  background: #ffcfcf; }
+
+#body {
+  background: #ffe8e8;
+  width: 1000vw; }
+  #body * {
+    color: #000;
+    padding: 0;
+    margin: 0;
+    font-family: "Ubuntu", sans-serif; }
+  #body #dataInfo {
+    width: 100vw;
+    background: #ffd9d9;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    text-align: center;
+    height: 5.5vh; }
+    #body #dataInfo #info_search {
+      display: flex;
+      align-self: center;
+      justify-content: flex-start; }
+      #body #dataInfo #info_search p {
+        padding: 0px 10px;
+        text-decoration: underline;
+        font-size: 1em; }
+    #body #dataInfo #info_search:hover p {
+      font-size: 1.05em; }
+    #body #dataInfo #info_info {
+      display: flex;
+      align-self: center;
+      justify-content: flex-end; }
+  #body #fixedHead {
+    position: absolute;
+    background: white;
+    width: 100vw;
+    height: 20vh;
+    top: 0;
+    z-index: 2; }
+  #body #contData {
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    position: absolute;
+    left: 0;
+    top: 45vh;
+    z-index: -1; }
+  #body #dataReturn {
+    color: black;
+    display: flex;
+    position: absolute;
+    overflow-x: visible;
+    left: 0; }
+    #body #dataReturn .panel {
+      display: flex;
+      width: 30vw;
+      height: 55vh;
+      justify-content: center;
+      flex-direction: column;
+      flex-wrap: wrap;
+      text-align: center;
+      align-items: center; }
+      #body #dataReturn .panel #p_location {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row; }
+
+.p_mapLink {
+  text-decoration: underline;
+  transition: 1s; }
+
+.p_mapLink:hover {
+  transition: 0.25s;
+  background: rgba(25, 25, 5, 0.9);
+  text-decoration: underline; }
+
+#foot {
+  background: #141e0a; }
+
+.evnt::before {
+  content: "---"; }
+
+.evnt {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1; }
+
+/*# sourceMappingURL=main.css.map */
