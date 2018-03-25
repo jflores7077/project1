@@ -13,7 +13,7 @@
             <div class='panel'>
                 <h2>{{facilityname}}</h2>
                 <p>{{borough}}</p>
-                <p>{{postcode}}</p>
+                <p>{{postcode}}</p> 
                 <h3>Location:</h3>
                 <p>{{facilityaddress}}</p>
                 <div class='p_location'>
@@ -34,11 +34,18 @@
             </div>
             <div class='cont' id='headCont'>
                 <div id='title'>
-                    <h5> Search By Borough:</h5>
+                    <h5> Search using <span id='method'>text</span>:</h5>
                 </div>
 
                 <div id='search'>
                     <input spellcheck="on" id='input1' type='text' class='removeAnim' placeholder="Enter Borough..." />
+                    <select name="borough" id='input2'>
+                        <option value="Manhattan">Manhattan</option>
+                        <option value="Queens">Queens</option>
+                        <option value="Staten Island">Staten Island</option>
+                        <option value="Bronx">Bronx</option>
+                        <option value="Brooklyn">Brooklyn</option>
+                    </select>
                     <button id='btn'>
                         Look up
                     </button>
@@ -50,7 +57,7 @@
             </div>
 
             <div id='Madeby'>
-                <p>Made by Javier F. and </p>
+                <p>Made by Xavier F. and </p>
             </div>
         </div>
 
@@ -76,7 +83,11 @@
             
         </div>
 
-        
+        <div id='loading'>
+            <div id='ldCenter'>
+                <h1>Loading...</h1>
+            </div>
+        </div>
         <script src='main.js'></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAt2RjxPRVyt_1tkbXrBFMqUIm5NTofTzM&callback=renderMap"></script>
         

@@ -71,11 +71,71 @@ function buildData(data){
     $('#sResults').text(resultNum)
     $('#dataReturn').html(build);
 }
+var dropbox = false;
+var dText = ' text'
+
+function switchHead(){
+    if(!dropbox){
+        dropbox =  true;
+        dText = 'drop down menu';
+
+        $('#method').animate({
+            'width':'-100vw'
+        },300,function(){
+            $('#method').html(dText)
+            $('#method').animate({
+                'width':'100%'
+            },100);
+        });
+
+        $('#input1').animate({
+            'width':'0vw'
+        },200,function(){
+            
+            $('#input2').animate({
+                'width':'10vw',
+                'display':'inline'
+            },200);
+        });
+
+    }else{
+        dropbox =  false;
+        dText = 'text';
+
+        $('#method').animate({
+            'width':'-100vw'
+        },300,function(){
+            $('#method').html(dText)
+            $('#method').animate({
+                'width':'100%'
+            },100);
+        });
+
+        $('#input2').animate({
+            'width':'0vw'
+        },200,function(){
+            $('#input1').animate({
+                'width':'10vw',
+                'display':'inline'
+            },200);
+        });
+
+       
+    }
+
+    
+    
+}
+
 getData();
 
 $(document).ready(function(){
-
+    $('#loading').css('pointer-events',' none')
+    $('#loading').addClass('fadeOut')
     $(this).scrollTop(0);
+
+    $('#title').click(switchHead)
+
     $('#info_search').click(function(){
         $('#map').animate({
             'left':'100vw'

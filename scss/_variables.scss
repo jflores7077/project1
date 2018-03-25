@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-$bg-colors: #e5e9eb, rgb(255, 232, 232), rgb(20,30,10);
-$ac-colors: rgba(196, 27, 27,0.5);
+$bg-colors: #d7e0e4, rgb(255, 232, 232), rgb(20,30,10);
+$ac-colors: rgba(224, 11, 11, 0.25);
 $txt-col: 	#8b5454, #000;  
+
+$load-bg: rgb(255, 180, 110);
 
 $overlay-bg: rgba(25,25,55,1);
 
@@ -48,5 +50,19 @@ $font: 'Ubuntu', sans-serif;
     100%{
         border-bottom: 0px solid transparent;
         caret-color: lighten(nth($ac-colors,1),2%);
+    }
+}
+
+@keyframes fadeLayout{
+    0%{
+        left:0;
+        
+        opacity: 1;
+    }
+
+    100%{
+        left:-50vw;
+        opacity: 0;
+
     }
 }

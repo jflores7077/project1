@@ -9,21 +9,28 @@
 @keyframes flashBorder {
   0% {
     border-bottom: 2px solid transparent;
-    caret-color: rgba(196, 27, 27, 0.5); }
+    caret-color: rgba(224, 11, 11, 0.25); }
   5% {
-    border-bottom: 2px solid rgba(196, 27, 27, 0.5); }
+    border-bottom: 2px solid rgba(224, 11, 11, 0.25); }
   10% {
-    border-bottom: 2px solid rgba(218, 30, 30, 0.5); }
+    border-bottom: 2px solid rgba(243, 17, 17, 0.25); }
   100% {
-    border-bottom: 2px solid rgba(196, 27, 27, 0.5);
-    caret-color: rgba(205, 28, 28, 0.5); } }
+    border-bottom: 2px solid rgba(224, 11, 11, 0.25);
+    caret-color: rgba(234, 11, 11, 0.25); } }
 @keyframes unflashBorder {
   0% {
-    caret-color: rgba(196, 27, 27, 0.5);
-    border-bottom: 2px solid rgba(196, 27, 27, 0.5); }
+    caret-color: rgba(224, 11, 11, 0.25);
+    border-bottom: 2px solid rgba(224, 11, 11, 0.25); }
   100% {
     border-bottom: 0px solid transparent;
-    caret-color: rgba(205, 28, 28, 0.5); } }
+    caret-color: rgba(234, 11, 11, 0.25); } }
+@keyframes fadeLayout {
+  0% {
+    left: 0;
+    opacity: 1; }
+  100% {
+    left: -50vw;
+    opacity: 0; } }
 body:not(.mapCont) {
   padding: 0;
   margin: 0;
@@ -37,7 +44,7 @@ body:not(.mapCont) {
   font-weight: bold; }
 
 #head {
-  background: #e5e9eb;
+  background: #d7e0e4;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -52,11 +59,11 @@ body:not(.mapCont) {
     text-align: center;
     justify-content: center;
     text-align: center; }
-  #head p, #head h1, #head h2, #head h3, #head h4, #head h5, #head h6, #head input {
+  #head p, #head h1, #head h2, #head h3, #head h4, #head h5, #head h6, #head input, #head select {
     color: #8b5454; }
   #head #h_title {
-    border: 3px solid rgba(196, 27, 27, 0.5);
-    background: #e8ebed;
+    border: 3px solid rgba(224, 11, 11, 0.25);
+    background: #dae2e6;
     margin: 5vh 2vw; }
     #head #h_title h1 {
       padding: 3vh 5vw; }
@@ -65,30 +72,67 @@ body:not(.mapCont) {
     #head #Madeby p {
       text-align: center;
       padding: 5px 25px;
-      color: rgba(225, 255, 225, 0.4);
-      background: rgba(255, 255, 255, 0.1); }
+      color: rgba(25, 25, 25, 0.2);
+      background: rgba(255, 255, 255, 0.5); }
+  #head #method {
+    display: inline-block;
+    width: 100%; }
+  #head #method:before {
+    content: " ";
+    display: inline-block;
+    width: 0.2em; }
   #head #headCont * {
     padding: 0;
     margin: 0;
     font-family: "Ubuntu", sans-serif;
+    word-spacing: 0.2em;
     overflow: hidden; }
   #head #title {
     font-size: 1.5em; }
+    #head #title * {
+      transition: 0.2s;
+      white-space: nowrap; }
     #head #title h5 {
-      padding: 3vh 13vw; }
+      padding: 3vh 13vw;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-flow: nowrap;
+      flex-direction: row;
+      align-items: center;
+      align-content: center; }
+      #head #title h5 span {
+        align-self: center; }
+  #head #title h5:hover {
+    background: #d1dbe0; }
   #head #search {
     padding: 2.5vh 0vw 2.5vh 0vw;
     display: flex;
     justify-content: center; }
     #head #search * {
       font-size: 1.1em; }
-    #head #search input {
+    #head #search #input1 {
       background: rgba(255, 255, 255, 0);
       border: none;
       transition: 0.1s;
       text-align: center;
-      caret-color: rgba(205, 28, 28, 0.5);
+      width: 10vw;
+      caret-color: rgba(234, 11, 11, 0.25);
       transition: 0.1s; }
+    #head #search #input2 {
+      background: rgba(255, 255, 255, 0);
+      border: none;
+      border-bottom: 2px solid rgba(224, 11, 11, 0.25);
+      transition: 0.1s;
+      text-align: center;
+      width: 0vw;
+      transition: 0.1s;
+      text-align-last: center;
+      /*https://stackoverflow.com/a/20464860*/
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      text-indent: 1px;
+      text-overflow: '';
+      /****************************************/ }
     #head #search #btn {
       padding: 0px 1em;
       margin: 0px 1vw;
@@ -181,7 +225,7 @@ body:not(.mapCont) {
 
 .p_mapLink:hover {
   transition: 0.25s;
-  background: rgba(25, 25, 5, 0.9);
+  background: rgba(215, 225, 205, 0.5);
   text-decoration: underline; }
 
 #foot {
@@ -195,5 +239,20 @@ body:not(.mapCont) {
   flex-wrap: wrap;
   flex-direction: row;
   flex: 1; }
+
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #ffb46e;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.fadeOut {
+  animation: fadeLayout 1s;
+  animation-fill-mode: forwards; }
 
 /*# sourceMappingURL=main.css.map */
