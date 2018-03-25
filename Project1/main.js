@@ -46,14 +46,25 @@ function buildData(data){
     var resultNum = 0;
     var searchFor = $('#input1').val()
     $('#sQuery').text(searchFor)
+    searchFor = searchFor.split(",");
+
+    for(var i in searchFor){
+        searchFor[i] = searchFor[i].replace(' ', '');
+    }
+    
+    
 
     for(var i in data){
-        console.log('sfor:'+searchFor.length)
-        if(data[i]['borough'].toLowerCase() == searchFor.toLowerCase()){
-            resultNum+=1;
-            build += Mustache.render(template, data[i])
-            
+        for(var j = 0; j<searchFor.length;j++){
+            console.log(searchFor[j])
+            if(data[i]['borough'].toLowerCase().replace(' ', '') == searchFor[j].toLowerCase().replace(' ', '')){
+                resultNum+=1;
+                build += Mustache.render(template, data[i])
+                
+            }
+
         }
+        
         
     }
     
@@ -61,8 +72,9 @@ function buildData(data){
     $('#dataReturn').html(build);
 }
 getData();
-//renderMap(data[i]['latitude'],data[i]['longitude'])
+
 $(document).ready(function(){
+
     $(this).scrollTop(0);
     $('#info_search').click(function(){
         $('#map').animate({
@@ -85,12 +97,12 @@ $(document).ready(function(){
                     'background':'rgba(219, 57, 8, 0)',
                     'transform':'rotate(0deg)'
                 })
-            }, 200);
+            }, 500);
         }else{
             $('#map').animate({
                 'left':'0'
             },400,function(){buildData(gData)});
-            $('#dataReturn').css('overflow','visible')
+            //$('body').css('overflow-x','scroll')
             $('#dataReturn').text('')
             
             $('#head').animate({

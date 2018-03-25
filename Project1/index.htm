@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
         <title>
             NYC  
         </title>
@@ -28,13 +29,16 @@
 
     <body>
         <div id='head'>
+            <div id='h_title'>
+                <h1>NYC FDNY Locations</h1>
+            </div>
             <div class='cont' id='headCont'>
                 <div id='title'>
-                    <p> NYC firestation Locations</p>
+                    <h5> Search By Borough:</h5>
                 </div>
 
                 <div id='search'>
-                    <input id='input1' type='text' class='removeAnim' placeholder="Enter Borough..." />
+                    <input spellcheck="on" id='input1' type='text' class='removeAnim' placeholder="Enter Borough..." />
                     <button id='btn'>
                         Look up
                     </button>
@@ -44,12 +48,16 @@
             <div class='mapCont' id='map'>
 
             </div>
+
+            <div id='Madeby'>
+                <p>Made by Javier F. and Matthew</p>
+            </div>
         </div>
 
         <div id='body'>
             <div id='dataInfo'>
                 <div id='info_search'>
-                    <p>Search</p>
+                    <p> &lt Search</p>
                 </div>
                 <div id='info_info'>
                     <h2><b><span id='sQuery' class='sSpan'></span></b> yielded <b><span id='sResults' class='sSpan'></span></b> results</p>
@@ -59,13 +67,13 @@
                     <p>Search</p>
                 </div>
             </div>
-            <div id='dataReturn'>
+            <div id='contData'>
+                <div id='dataReturn'>
+
+                </div>
 
             </div>
-        </div>
-
-        <div id='foot'>
-
+            
         </div>
 
         

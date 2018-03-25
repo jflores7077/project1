@@ -23,17 +23,39 @@ body:not(.mapCont){
     align-content: center;
     align-items: center;
     align-self: center;
+    flex-direction: column;
     *{
         animation-fill-mode: forwards;
         transition: 1s;
         text-align: center;
         justify-content: center;
+        text-align: center;
+        
     }
     p, h1, h2, h3, h4, h5, h6, input{
         color: nth($txt-col,1);
     }
+    #h_title{
+        border: 3px solid nth($ac-colors,1);
+        background: lighten(nth( $bg-colors, 1),1%);
+        h1{
+            padding: 3vh 5vw;
+        }
+
+        margin: 5vh 2vw;
+    }
+    #Madeby{
+        padding-top: 5vw;
+        p{
+            text-align: center;
+            padding: 5px 25px;
+            color: rgba(225,255,225,0.4);
+            background: rgba(255,255,255,0.1);
+
+        }
+    }
     #headCont{
-        border: 3px solid rgba(255,255,255,0.4);
+        
         *{
             padding: 0;
             margin: 0;
@@ -44,14 +66,16 @@ body:not(.mapCont){
     }
 
     #title{
-        font-size: 2em;
-        p{
-            padding: 8vh 13vw ( 8vh - 2.5vh ) 13vw;
+        font-size: 1.5em;
+        h5{
+            padding: 3vh 13vw;
         }
 
     }
     #search{
-        
+        *{
+            font-size: 1.1em;
+        }
         padding: 2.5vh 0vw 2.5vh 0vw;
         display: flex;
         justify-content: center;
@@ -62,7 +86,7 @@ body:not(.mapCont){
             transition: 0.1s;
             text-align: center;
 
-            caret-color: nth($bg-colors,1);
+            caret-color: lighten(nth($ac-colors,1),2%);
 
             transition: 0.1s;
         }
@@ -101,15 +125,16 @@ body:not(.mapCont){
 #body{
     
     background:nth( $bg-colors, 2);
+    width: 1000vw;
     *{
         color: nth($txt-col,2);
         padding: 0;
         margin: 0;
         font-family: $font;
 
-        overflow: hidden;
     }
     #dataInfo{
+        width: 100vw;
         background: darken(nth( $bg-colors, 2),3%);
         display: flex;
         align-content: center;
@@ -142,12 +167,31 @@ body:not(.mapCont){
         }
         
     }
+    #fixedHead{
+        position: absolute;
+        background: white;
+        width: 100vw;
+        height: 20vh;
+        top: 0;
+        z-index: 2;
+    }
+
+    #contData{
+        width: 100%;
+        height: 100vh;
+        overflow:auto; position:absolute; left:0; top: 45vh;
+        z-index: -1;
+        
+    }
 
     #dataReturn{
-        display: flex;
-        width: 10000000vw;
-        height: 100vh;
+        color:black;
         
+        display: flex;
+        position: absolute;
+
+        overflow-x: visible;
+        left: 0;
         .panel{
             display: flex;
             width: 30vw;
@@ -171,7 +215,15 @@ body:not(.mapCont){
 }
 
 .p_mapLink{
-    background: red;
+    text-decoration: underline;
+    transition: 1s;
+}
+
+
+.p_mapLink:hover{
+    transition: 0.25s;
+    background: rgba(25,25,05,0.9);
+    text-decoration: underline;
 }
 
 #foot{
