@@ -182,6 +182,7 @@ body:not(.mapCont){
         font-family: $font;
 
     }
+    
     #dataInfo{
         width: 100vw;
         background: darken(nth( $bg-colors, 2),3%);
@@ -190,6 +191,7 @@ body:not(.mapCont){
         justify-content: space-between;
         text-align: center;
         height: 5.5vh;
+        border-bottom: 3px solid rgba(0,0,0,0.3);
         #info_search{
             display: flex;
             align-self: center;
@@ -213,6 +215,9 @@ body:not(.mapCont){
             display: flex;
             align-self: center;
             justify-content: flex-end;
+            p{
+                font-size: 1.2em;
+            }
         }
         
     }
@@ -235,28 +240,41 @@ body:not(.mapCont){
 
     #dataReturn{
         color:black;
-        
+        z-index: 2;
         display: flex;
         position: absolute;
-
+        
+        background: nth($bg-colors,2);
         overflow-x: visible;
         left: 0;
+        align-items: center;
+
+        height: ( 45vh + 5.5vh );
+        top: 5.5vh;
         .panel{
             display: flex;
             width: 30vw;
-            height: 100vh - 45vh;
+            height: ( 40vh + 5.5vh ) ;
             justify-content: center;
             flex-direction: column;
             flex-wrap: wrap;
             text-align: center;
             align-items: center;
 
+            background: darken(nth($bg-colors,2),3%);
+            margin-right: 2vw;     
+            border: 2px solid darken(nth($bg-colors,2),1.5%);
+            transition: 1s;
             #p_location{
                 display: flex;
                 flex-wrap: wrap;
                 flex-direction: row;
             }
             
+        }
+        .panel:hover{
+            transition: 0.2s;
+            border: 3px solid darken(nth($bg-colors,2),5%);
         }
     }
 
@@ -271,7 +289,7 @@ body:not(.mapCont){
 
 .p_mapLink:hover{
     transition: 0.25s;
-    background: rgba(215,225,205,0.5);
+    background: darken(nth($bg-colors,2),15%);
     text-decoration: underline;
 }
 

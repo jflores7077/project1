@@ -9,21 +9,21 @@
 @keyframes flashBorder {
   0% {
     border-bottom: 2px solid transparent;
-    caret-color: rgba(224, 11, 11, 0.25); }
+    caret-color: rgba(201, 14, 14, 0.616); }
   5% {
-    border-bottom: 2px solid rgba(224, 11, 11, 0.25); }
+    border-bottom: 2px solid rgba(201, 14, 14, 0.616); }
   10% {
-    border-bottom: 2px solid rgba(243, 17, 17, 0.25); }
+    border-bottom: 2px solid rgba(225, 16, 16, 0.616); }
   100% {
-    border-bottom: 2px solid rgba(224, 11, 11, 0.25);
-    caret-color: rgba(234, 11, 11, 0.25); } }
+    border-bottom: 2px solid rgba(201, 14, 14, 0.616);
+    caret-color: rgba(211, 15, 15, 0.616); } }
 @keyframes unflashBorder {
   0% {
-    caret-color: rgba(224, 11, 11, 0.25);
-    border-bottom: 2px solid rgba(224, 11, 11, 0.25); }
+    caret-color: rgba(201, 14, 14, 0.616);
+    border-bottom: 2px solid rgba(201, 14, 14, 0.616); }
   100% {
     border-bottom: 0px solid transparent;
-    caret-color: rgba(234, 11, 11, 0.25); } }
+    caret-color: rgba(211, 15, 15, 0.616); } }
 @keyframes fadeLayout {
   0% {
     left: 0;
@@ -60,9 +60,9 @@ body:not(.mapCont) {
     justify-content: center;
     text-align: center; }
   #head p, #head h1, #head h2, #head h3, #head h4, #head h5, #head h6, #head input, #head select {
-    color: #8b5454; }
+    color: #4d3030; }
   #head #h_title {
-    border: 3px solid rgba(224, 11, 11, 0.25);
+    border: 3px solid rgba(201, 14, 14, 0.616);
     background: #dae2e6;
     margin: 5vh 2vw; }
     #head #h_title h1 {
@@ -116,12 +116,12 @@ body:not(.mapCont) {
       transition: 0.1s;
       text-align: center;
       width: 10vw;
-      caret-color: rgba(234, 11, 11, 0.25);
+      caret-color: rgba(211, 15, 15, 0.616);
       transition: 0.1s; }
     #head #search #input2 {
       background: rgba(255, 255, 255, 0);
       border: none;
-      border-bottom: 2px solid rgba(224, 11, 11, 0.25);
+      border-bottom: 2px solid rgba(201, 14, 14, 0.616);
       transition: 0.1s;
       text-align: center;
       width: 0vw;
@@ -152,10 +152,10 @@ body:not(.mapCont) {
   left: 100vw;
   width: 100vw;
   height: 45vh;
-  background: #ffcfcf; }
+  background: #e0d8d8; }
 
 #body {
-  background: #ffe8e8;
+  background: #ebe6e6;
   width: 1000vw; }
   #body * {
     color: #000;
@@ -164,12 +164,13 @@ body:not(.mapCont) {
     font-family: "Ubuntu", sans-serif; }
   #body #dataInfo {
     width: 100vw;
-    background: #ffd9d9;
+    background: #e4dede;
     display: flex;
     align-content: center;
     justify-content: space-between;
     text-align: center;
-    height: 5.5vh; }
+    height: 5.5vh;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.3); }
     #body #dataInfo #info_search {
       display: flex;
       align-self: center;
@@ -184,6 +185,8 @@ body:not(.mapCont) {
       display: flex;
       align-self: center;
       justify-content: flex-end; }
+      #body #dataInfo #info_info p {
+        font-size: 1.2em; }
   #body #fixedHead {
     position: absolute;
     background: white;
@@ -201,23 +204,35 @@ body:not(.mapCont) {
     z-index: -1; }
   #body #dataReturn {
     color: black;
+    z-index: 2;
     display: flex;
     position: absolute;
+    background: #ebe6e6;
     overflow-x: visible;
-    left: 0; }
+    left: 0;
+    align-items: center;
+    height: 50.5vh;
+    top: 5.5vh; }
     #body #dataReturn .panel {
       display: flex;
       width: 30vw;
-      height: 55vh;
+      height: 45.5vh;
       justify-content: center;
       flex-direction: column;
       flex-wrap: wrap;
       text-align: center;
-      align-items: center; }
+      align-items: center;
+      background: #e4dede;
+      margin-right: 2vw;
+      border: 2px solid #e8e2e2;
+      transition: 1s; }
       #body #dataReturn .panel #p_location {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row; }
+    #body #dataReturn .panel:hover {
+      transition: 0.2s;
+      border: 3px solid #e0d8d8; }
 
 .p_mapLink {
   text-decoration: underline;
@@ -225,7 +240,7 @@ body:not(.mapCont) {
 
 .p_mapLink:hover {
   transition: 0.25s;
-  background: rgba(215, 225, 205, 0.5);
+  background: #c9bcbc;
   text-decoration: underline; }
 
 #foot {

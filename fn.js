@@ -81,11 +81,13 @@ function buildData(data,d){
     $('#dataReturn').html(build);
 }
 
+//Remove loading screen
 function removeOverlay(){
     $('#loading').css('pointer-events',' none')
     $('#loading').addClass('fadeOut')
 }
 
+//Search animation
 function goSearch(){
     $('#map').animate({
         'left':'100vw'
@@ -99,6 +101,7 @@ function goSearch(){
     });
 }
 
+//click animation on landing
 function searchBtn(d){
     //Prevent animation from toggling
     $('#search input').addClass('addAnim');
@@ -132,6 +135,7 @@ function searchBtn(d){
     
 }
 
+//Switch from landing page to map page
 function switchHead(dropboxb,dText){
     if(!dropbox){
         dropbox =  true;
