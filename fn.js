@@ -87,6 +87,18 @@ function removeOverlay(){
     $('#loading').addClass('fadeOut')
 }
 
+//Search using enter key
+function searchEnter(event) {
+    if(!dropbox){
+        //prevent default action
+        event.preventDefault();
+        //Enter runs dropbox
+        if (event.keyCode === 13) {
+            searchBtn(dropbox)
+            $('#input1').blur();
+        }
+    }
+}
 //Search animation
 function goSearch(){
     $('#map').animate({

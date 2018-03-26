@@ -9,12 +9,14 @@
 var gData = {};
 var finishedLoading = false;
 
+//Store boolean on which search method is being used
 var dropbox = false;
 var dText = ' text'
 
 //Load data
 getData();
 
+//Document is ready
 $(document).ready(function(){
     $(this).scrollTop(0);
     removeOverlay();
@@ -32,18 +34,8 @@ $(document).ready(function(){
         searchBtn(dropbox)
         $('#input1').blur();
     })
-    //Press enter to search
-    $('body').on('keyup', '#input1', function (event) {
-        if(!dropbox){
-            //prevent default action
-            event.preventDefault();
-            //Enter runs dropbox
-            if (event.keyCode === 13) {
-                searchBtn(dropbox)
-                $('#input1').blur();
-            }
-        }
-    });
+    //Release enter to search
+    $('body').on('keyup', '#input1', searchEnter);
 
     //On hover of headCont
     $('#headCont').hover(function(){
