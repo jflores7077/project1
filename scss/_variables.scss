@@ -4,7 +4,7 @@ $bg-colors: #d7e0e4, rgb(235, 230, 230), rgb(20,30,10);
 $ac-colors: rgba(201, 14, 14, 0.616);
 $txt-col: 	#4d3030, #000;  
 
-$load-bg: rgb(255, 180, 110);
+$load-bg: rgb(255, 210, 230);
 
 $overlay-bg: rgba(25,25,55,1);
 
@@ -61,8 +61,27 @@ $font: 'Ubuntu', sans-serif;
     }
 
     100%{
-        left:-50vw;
+        left:-100vw;
         opacity: 0;
 
+    }
+}
+
+@keyframes popMsgFade{
+    0%{
+        opacity: 0.75;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes popMsgIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0.75;
     }
 }

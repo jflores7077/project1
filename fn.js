@@ -45,12 +45,14 @@ function buildData(data,d){
             searchFor[i] = searchFor[i].replace(/ /g, "");
         }
 
+        console.log(searchFor)
     }else{
         //Search query
         var searchFor = $('#input2').val()
         //display search query to user
         $('#sQuery').text(searchFor)
-        
+        searchFor = searchFor.split(",");
+        console.log(searchFor)
     }
     
     
@@ -61,10 +63,8 @@ function buildData(data,d){
         for(var j = 0; j<searchFor.length;j++){
             //Convert to lowercase and remove spaces
             var newgData = data[i]['borough'].toLowerCase().replace(/ /g, "")
-            if(!d){
+            if(!d || d){
                 var newgUser = searchFor[j].toLowerCase().replace(/ /g, "")
-            }else{
-                var newgUser = searchFor.toLowerCase().replace(/ /g, "")
             }
 
             //If they're equal, add one to result num and add to build
@@ -130,6 +130,8 @@ function searchBtn(d){
                 'transform':'rotate(0deg)'
             })
         }, 300);
+
+        return false;
     }else{
         $('#map').animate({
             'left':'0'
@@ -142,7 +144,7 @@ function searchBtn(d){
         $('#head').animate({
             'height':'45vh'
         },200)
-        
+        return true;
     }
     
 }

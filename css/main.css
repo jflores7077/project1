@@ -29,8 +29,18 @@
     left: 0;
     opacity: 1; }
   100% {
-    left: -50vw;
+    left: -100vw;
     opacity: 0; } }
+@keyframes popMsgFade {
+  0% {
+    opacity: 0.75; }
+  100% {
+    opacity: 0; } }
+@keyframes popMsgIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 0.75; } }
 body:not(.mapCont) {
   padding: 0;
   margin: 0;
@@ -196,8 +206,9 @@ body:not(.mapCont) {
     z-index: 2; }
   #body #contData {
     width: 100%;
-    height: 100vh;
-    overflow: auto;
+    height: 55vh;
+    overflow: hidden;
+    overflow-x: auto;
     position: absolute;
     left: 0;
     top: 45vh;
@@ -261,7 +272,7 @@ body:not(.mapCont) {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #ffb46e;
+  background: #ffd2e6;
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -269,5 +280,27 @@ body:not(.mapCont) {
 .fadeOut {
   animation: fadeLayout 1s;
   animation-fill-mode: forwards; }
+
+.popMsg {
+  position: fixed;
+  top: 85vh;
+  left: 50vw;
+  padding: 5px 15px;
+  background: rgba(230, 220, 220, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  opacity: 0.75; }
+
+.popMsgIn {
+  animation: 1s popMsgIn;
+  animation-fill-mode: forwards; }
+
+.popMsgAnim {
+  animation: 2s popMsgFade;
+  animation-delay: 2s;
+  animation-fill-mode: forwards; }
+
+.scroller {
+  background: red; }
 
 /*# sourceMappingURL=main.css.map */

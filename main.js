@@ -2,8 +2,29 @@
 - Your work must include JavaScript with Mustache, jQuery, HTML and CSS.
 - You must display a stand-alone Google Map (within a container) using location information.
 - Extra credit for teams that use features such as Bootstrap (a framework for responsive web design)
----Javier F.
+---Javier F. 
+---Matthew
 */
+
+//custom alert box
+var jf = {
+    alert: function(txt){
+        var d = document.createElement('div');
+        var dTxt = txt;
+        $(d).text(dTxt);
+        $(d).addClass('popMsg');
+        $(d).addClass('popMsgAnim');
+
+        
+        $('body').append( $(d) );
+       console.log($(d).width());
+       var curLeft = parseInt($(d).css("left"));
+       var newOffset = $(d).width()/2;
+       $(d).css({
+           left:  curLeft - newOffset,
+       })
+    }
+};
 
 //Load data into gData to store locally
 var gData = {};
@@ -20,7 +41,7 @@ getData();
 $(document).ready(function(){
     $(this).scrollTop(0);
     removeOverlay();
-
+    jf.alert('welcome')
     //on click run switchHead
     $('#title').click(function(){
         switchHead(dropbox,dText)
@@ -31,7 +52,10 @@ $(document).ready(function(){
 
     //Clickon search button
     $('#btn').click(function(){
-        searchBtn(dropbox)
+        if(searchBtn(dropbox)){
+            jf.alert('Use shift + middle mouse to see more items');
+        }
+        
         $('#input1').blur();
     })
     //Release enter to search

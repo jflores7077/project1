@@ -232,8 +232,9 @@ body:not(.mapCont){
 
     #contData{
         width: 100%;
-        height: 100vh;
-        overflow:auto; position:absolute; left:0; top: 45vh;
+        height: 100vh - 45vh;
+        overflow: hidden;
+        overflow-x:auto; position:absolute; left:0; top: 45vh;
         z-index: -1;
         
     }
@@ -323,4 +324,30 @@ body:not(.mapCont){
 .fadeOut{
     animation: fadeLayout 1s;
     animation-fill-mode: forwards;
+}
+
+.popMsg{
+    position: fixed;
+    top: 85vh;
+    left: 50vw;
+    padding: 5px 15px;
+    background: rgba(230,220,220,0.8);
+    border: 1px solid rgba(0,0,0,0.9);
+    border-radius: 10px;
+    
+    opacity: 0.75;
+    
+}
+.popMsgIn{
+    animation: 1s popMsgIn;
+    animation-fill-mode: forwards;
+}
+.popMsgAnim{
+    animation: 2s popMsgFade;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+}
+
+.scroller{
+    background: red;
 }
