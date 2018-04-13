@@ -10,6 +10,8 @@ $overlay-bg: rgba(25,25,55,1);
 
 $font: 'Ubuntu', sans-serif;
 
+$msgOpacity:  0.9;
+
 @keyframes flashRed{
     0%{
         background:transparent;
@@ -69,7 +71,7 @@ $font: 'Ubuntu', sans-serif;
 
 @keyframes popMsgFade{
     0%{
-        opacity: 0.75;
+        opacity: $msgOpacity;
     }
 
     100%{
@@ -82,6 +84,6 @@ $font: 'Ubuntu', sans-serif;
         opacity: 0;
     }
     100%{
-        opacity: 0.75;
+        opacity:  $msgOpacity;
     }
 }

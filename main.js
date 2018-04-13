@@ -41,7 +41,7 @@ getData();
 $(document).ready(function(){
     $(this).scrollTop(0);
     removeOverlay();
-    jf.alert('welcome')
+    jf.alert('test')
     //on click run switchHead
     $('#title').click(function(){
         switchHead(dropbox,dText)
@@ -53,7 +53,7 @@ $(document).ready(function(){
     //Clickon search button
     $('#btn').click(function(){
         if(searchBtn(dropbox)){
-            jf.alert('Use shift + middle mouse to see more items');
+            jf.alert('Use shift + middle mouse scroll to see more items');
         }
         
         $('#input1').blur();
@@ -72,6 +72,11 @@ $(document).ready(function(){
         var panel = $(this).parent(); 
         var lat = $(panel).find('.lat').text()
         var lng = $(panel).find('.lng').text()
-        renderMap(lat,lng)
+        
+        if(coordsTrue($(this).parent().attr('id'))){
+            renderMap(lat,lng)
+        }else{
+            jf.alert('Not available for this station.')
+        }
     });
 });

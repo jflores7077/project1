@@ -335,7 +335,11 @@ body:not(.mapCont){
     border: 1px solid rgba(0,0,0,0.9);
     border-radius: 10px;
     
-    opacity: 0.75;
+    opacity: $msgOpacity;
+    pointer-events: none;
+    *{
+        pointer-events: none;
+    }
     
 }
 .popMsgIn{

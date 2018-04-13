@@ -25,6 +25,19 @@ function getData(){
     });
 }
 
+//check if coordinates are real
+function coordsTrue(parent){
+    var l =  $('#'+parent).find('.p_location').find('#plat').find('.lat').text();
+    l= parseInt(l)
+    l = String(l); 
+    if(l == 'NaN'){
+        return false
+    }else{
+        return true;
+    }
+
+}
+
 //Build html from gData
 function buildData(data,d){
     
@@ -70,6 +83,10 @@ function buildData(data,d){
             //If they're equal, add one to result num and add to build
             if(newgData == newgUser){
                 resultNum+=1;
+                data[i]['resultJF'] = resultNum;
+                
+                
+                
                 build += Mustache.render(template, data[i])
                 
             }
@@ -176,7 +193,7 @@ function switchHead(dropboxb,dText){
 
     }else{
         dropbox =  false;
-        dText = 'text';
+        dText = 'text field';
 
         $('#method').animate({
             'width':'-100vw'

@@ -33,14 +33,14 @@
     opacity: 0; } }
 @keyframes popMsgFade {
   0% {
-    opacity: 0.75; }
+    opacity: 0.9; }
   100% {
     opacity: 0; } }
 @keyframes popMsgIn {
   0% {
     opacity: 0; }
   100% {
-    opacity: 0.75; } }
+    opacity: 0.9; } }
 body:not(.mapCont) {
   padding: 0;
   margin: 0;
@@ -289,7 +289,10 @@ body:not(.mapCont) {
   background: rgba(230, 220, 220, 0.8);
   border: 1px solid rgba(0, 0, 0, 0.9);
   border-radius: 10px;
-  opacity: 0.75; }
+  opacity: 0.9;
+  pointer-events: none; }
+  .popMsg * {
+    pointer-events: none; }
 
 .popMsgIn {
   animation: 1s popMsgIn;
