@@ -41,7 +41,7 @@ getData();
 $(document).ready(function(){
     $(this).scrollTop(0);
     removeOverlay();
-    jf.alert('test')
+    jf.alert('Tip: Click on "Search via"')
     //on click run switchHead
     $('#title').click(function(){
         switchHead(dropbox,dText)
