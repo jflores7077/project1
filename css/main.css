@@ -8,7 +8,7 @@
     background: transparent; } }
 @keyframes flashBorder {
   0% {
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid rgba(201, 14, 14, 0.4);
     caret-color: rgba(201, 14, 14, 0.616); }
   5% {
     border-bottom: 2px solid rgba(201, 14, 14, 0.616); }
@@ -22,7 +22,7 @@
     caret-color: rgba(201, 14, 14, 0.616);
     border-bottom: 2px solid rgba(201, 14, 14, 0.616); }
   100% {
-    border-bottom: 0px solid transparent;
+    border-bottom: 1px solid rgba(201, 14, 14, 0.4);
     caret-color: rgba(211, 15, 15, 0.616); } }
 @keyframes fadeLayout {
   0% {
@@ -123,11 +123,10 @@ body:not(.mapCont) {
     #head #search #input1 {
       background: rgba(255, 255, 255, 0);
       border: none;
-      transition: 0.1s;
       text-align: center;
       width: 10vw;
       caret-color: rgba(211, 15, 15, 0.616);
-      transition: 0.1s; }
+      transition: 0.2s; }
     #head #search #input2 {
       background: rgba(255, 255, 255, 0);
       border: none;
@@ -146,7 +145,12 @@ body:not(.mapCont) {
     #head #search #btn {
       padding: 0px 1em;
       margin: 0px 1vw;
+      background: transparent;
+      border-radius: 5%;
       transition: 0.2s; }
+    #head #search #btn:hover {
+      background: rgba(20, 20, 20, 0.1);
+      border-radius: 10%; }
 
 .addAnim {
   animation: flashBorder 1s; }
@@ -184,13 +188,16 @@ body:not(.mapCont) {
     #body #dataInfo #info_search {
       display: flex;
       align-self: center;
-      justify-content: flex-start; }
+      justify-content: flex-start;
+      background: rgba(230, 100, 150, 0.1); }
       #body #dataInfo #info_search p {
-        padding: 0px 10px;
+        padding: 5px 15px;
         text-decoration: underline;
         font-size: 1em; }
-    #body #dataInfo #info_search:hover p {
-      font-size: 1.05em; }
+    #body #dataInfo #info_search:hover {
+      background: rgba(230, 100, 150, 0.2); }
+      #body #dataInfo #info_search:hover p {
+        font-size: 1.01em; }
     #body #dataInfo #info_info {
       display: flex;
       align-self: center;

@@ -49,6 +49,9 @@ function buildData(data,d){
     if(!d){
         //Search query
         var searchFor = $('#input1').val()
+        if(searchFor=='all'){
+            searchFor = 'Manhattan, Bronx, Brooklyn, Queens, Staten Island'
+        }
         //display search query to user
         $('#sQuery').text(searchFor)
         //Split user's response into array, slice @ ,
@@ -84,8 +87,6 @@ function buildData(data,d){
             if(newgData == newgUser){
                 resultNum+=1;
                 data[i]['resultJF'] = resultNum;
-                
-                
                 
                 build += Mustache.render(template, data[i])
                 

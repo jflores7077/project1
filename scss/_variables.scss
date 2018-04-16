@@ -26,7 +26,7 @@ $msgOpacity:  0.9;
 
 @keyframes flashBorder{
     0%{
-        border-bottom: 2px solid transparent;
+        border-bottom: 1px solid rgba(nth($ac-colors,1),0.4);
         caret-color: nth($ac-colors,1);
     }
 
@@ -50,7 +50,7 @@ $msgOpacity:  0.9;
         border-bottom: 2px solid nth($ac-colors,1);
     }
     100%{
-        border-bottom: 0px solid transparent;
+        border-bottom: 1px solid rgba(nth($ac-colors,1),0.4);
         caret-color: lighten(nth($ac-colors,1),2%);
     }
 }
